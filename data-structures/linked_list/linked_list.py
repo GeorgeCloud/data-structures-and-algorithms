@@ -34,16 +34,40 @@ class LinkedList(object):
                 current = current._next
         return False
 
-    def remove(self, value):
-        pass
+    def append(self, value):
+        """Appends a new node to the end of the linked list"""
+        current = self.head
+        while current is not None:
+            if current.val is None:
+                current = current._next
+        self._len += 1
+        current._next == Node(value)
 
-    def find_by_index(self, index):
-        pass
+    def insert_before(self, value, newVal):
+        """inserts a node before a specified node value"""
+        new_node = Node(newVal)
+        current = self.head._next
+        while current._next is not None:
+            if current._next.val == value:
+                new_node._next = current._next
+                current._next = new_node
+                self._len += 1
+                return self._len
+            current = current._next
+        if current.val is None:
+            raise ValueError("Data not in list")
 
+    def insert_after(self, value, newVal):
+        """inserts a node after a specified node value"""
+        current = self.head
+        while current is not None:
+            if current.val == value:
+                self._len += 1
+                current._next = Node(newVal, current._next)
+            current = current._next
 
-if __name__ == "__main__":
-    try:
-        ll = LinkedList([1, 2, 3, 4])
-        # print(ll.find(5))
-    except TypeError:
-        print("This Linked-List takes one array as a parameter")
+# if __name__ == "__main__":
+#     try:
+#         ll = LinkedList([1, 2, 3, 4])
+#     except TypeError:
+#         print("This Linked-List takes one array as a parameter")

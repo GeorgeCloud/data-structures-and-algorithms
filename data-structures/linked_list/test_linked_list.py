@@ -32,3 +32,23 @@ def test_current_node_value():
     """Checking for attributes inside __init__"""
     node = Node([1, 2, 3, 4, 5])
     assert isinstance(node.val, list)
+
+
+def test_append():
+    ll = LinkedList(['book one', 'book two'])
+    ll.append('a')
+    assert ll.find('a')
+    assert 'a' == ll.head._next._next.val
+
+
+def test_insert_before():
+    ll = LinkedList(['a', 'b', 'c'])
+    ll.insert_before('a', 'z')
+    assert 'a' == ll.head.val
+    assert isinstance(ll.head.val, str)
+
+
+def test_insert_after():
+    ll = LinkedList(['a', 'b', 'c'])
+    ll.insert_after('a', 'z')
+    assert 'z' == ll.head._next.val
