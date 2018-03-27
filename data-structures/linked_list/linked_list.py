@@ -34,19 +34,21 @@ class LinkedList(object):
                 current = current._next
         return False
 
-    def append(self, value):
-        """Appends a new node to the end of the linked list"""
+    def append(self, newVal):
+        """appends a value at the end of the linked list."""
         current = self.head
-        while current is not None:
-            if current.val is None:
-                current = current._next
-        self._len += 1
-        current._next == Node(value)
+        while current:
+            current = current._next
+            self.insert(newVal)
+            self._len += 1
+        return self._len
 
     def insert_before(self, value, newVal):
         """inserts a node before a specified node value"""
         new_node = Node(newVal)
-        current = self.head._next
+        if value == self.head.val:
+            self.head = Node(newVal, self.head)
+        current = self.head
         while current._next is not None:
             if current._next.val == value:
                 new_node._next = current._next
@@ -66,8 +68,10 @@ class LinkedList(object):
                 current._next = Node(newVal, current._next)
             current = current._next
 
-# if __name__ == "__main__":
-#     try:
-#         ll = LinkedList([1, 2, 3, 4])
-#     except TypeError:
-#         print("This Linked-List takes one array as a parameter")
+
+if __name__ == "__main__":
+    try:
+        ll = LinkedList([1, 2, 3, 4])
+        print(ll.kthFromEnd(1))
+    except TypeError:
+        print("This Linked-List takes one array as a parameter")

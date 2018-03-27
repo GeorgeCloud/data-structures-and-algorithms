@@ -37,15 +37,15 @@ def test_current_node_value():
 def test_append():
     ll = LinkedList(['book one', 'book two'])
     ll.append('a')
-    assert ll.find('a')
-    assert 'a' == ll.head._next._next.val
+    assert ll.find('a') is True
+    assert 'a' == ll.head._next.val
 
 
 def test_insert_before():
     ll = LinkedList(['a', 'b', 'c'])
     ll.insert_before('a', 'z')
-    assert 'a' == ll.head.val
-    assert isinstance(ll.head.val, str)
+    assert 'z' == ll.head.val
+    assert ll.find('z') is True
 
 
 def test_insert_after():
