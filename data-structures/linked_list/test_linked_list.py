@@ -52,3 +52,18 @@ def test_insert_after():
     ll = LinkedList(['a', 'b', 'c'])
     ll.insert_after('a', 'z')
     assert 'z' == ll.head._next.val
+
+
+def test_kkthFromEnd():
+    """
+    Checks if the linked-list is empty
+    Checks if out of range in Linked-List
+    Returns node with correct key value
+    """
+    nodes1 = LinkedList(['a', 1, 'hello world', 5.0, True])
+    assert nodes1.kthFromEnd(3) == 1
+
+    nodes2 = LinkedList([])
+    assert nodes2.kthFromEnd(5) == 'LinkedList is empty.'
+    nodes2.insert([5, 6, 7, 8, 9, 10])
+    assert nodes2.kthFromEnd(100) is False

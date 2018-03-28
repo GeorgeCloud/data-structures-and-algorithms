@@ -68,10 +68,22 @@ class LinkedList(object):
                 current._next = Node(newVal, current._next)
             current = current._next
 
+    def kthFromEnd(self, key):
+        iter = self._len - (key + 1)
+        if self._len == 0:
+            return 'LinkedList is empty.'
+        if 0 > key or key > self._len:
+            return False
+        current = self.head
+        while range(iter):
+            iter -= 1
+            current = current._next
+        return current.val
 
-if __name__ == "__main__":
-    try:
-        ll = LinkedList([1, 2, 3, 4])
-        print(ll.kthFromEnd(1))
-    except TypeError:
-        print("This Linked-List takes one array as a parameter")
+#
+# if __name__ == "__main__":
+#     try:
+#         ll = LinkedList([1, 2, 3, 4])
+#         print(ll.kthFromEnd(3))
+#     except TypeError:
+#         print("This Linked-List takes one array as a parameter")
