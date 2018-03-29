@@ -1,6 +1,8 @@
 from linked_list import LinkedList
 from node import Node
+from mergeList import ll_merge
 # import pytest
+
 
 
 def test_linked_list_creation():
@@ -67,3 +69,29 @@ def test_kkthFromEnd():
     assert nodes2.kthFromEnd(5) == 'LinkedList is empty.'
     nodes2.insert([5, 6, 7, 8, 9, 10])
     assert nodes2.kthFromEnd(100) is False
+
+
+def test_ll_merge():
+    """
+    Validates if LinkedList is empty.
+    Returns Correct head node of LinkedList.
+    Returns the whole LinkedList merged.
+    """
+    arr1 = LinkedList()
+    arr2 = LinkedList()
+    LL = ll_merge(arr1, arr2)
+    assert LL is False
+
+    # Adding 6 to LinkedList
+    arr1 = LinkedList([6])
+    LL = ll_merge(arr1, arr2)
+    assert LL.head.val == 6
+
+    # Combining TWO LinkedList
+    arr1 = LinkedList([1, 3, 5, 7])
+    arr2 = LinkedList([2, 4, 6, 8])
+    LL = ll_merge(arr1, arr2)
+    assert LL.head.val.val == 1
+    assert LL.head._next.val == 2
+    assert LL.head._next._next.val.val == 3
+    assert LL.head._next._next._next.val == 4
