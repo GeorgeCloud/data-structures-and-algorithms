@@ -1,21 +1,18 @@
-testArray = ['phone', 'pop', 'tree', 'item']
+def insertShiftArray(arr, val):
+    """Inserts value in the middle of an array"""
+    try:
+        if type(arr) != list:
+            raise TypeError('First variable is suppose to be an array type')
+    except TypeError as err:
+        print(err.args[0])
+        return False
 
+    if len(arr) == 0:
+        return [val]
 
-
-def insertShiftArray(arr, value):
-    """
-    Adding the users input value if current element in iteration
-    is the element in given arrays length - 1
-    """
-    newArray = []
-    for i in arr:
-        if i == arr[len(arr)/2-1]:
-            print i, 'is equal to (middle-1) element: ', arr[len(arr)/2-1]
-            newArray += i; newArray += value
-        else:
-            print 'inserting items from testArray'
-            newArray += i
-    return newArray
-
-
-# print insertShiftArray(testArray, 'e')
+    new_array = []
+    for i in range(len(arr)):
+        if i >= len(arr)/2 and i < len(arr)/2+1:
+            new_array.append(val)
+        new_array.append(arr[i])
+    return new_array
