@@ -1,7 +1,0 @@
-[
-  "test_queue.py::test_size",
-  "test_queue.py::test_enqueue",
-  "test_queue.py::test_dequque_before",
-  "test_queue.py::test_dequque_after",
-  "test_queue.py::test_dequque_error"
-]

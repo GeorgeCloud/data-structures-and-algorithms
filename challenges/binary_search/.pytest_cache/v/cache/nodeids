@@ -1,5 +1,0 @@
-[
-  "test_binary_search.py::test_binary_search_empty_list",
-  "test_binary_search.py::test_binary_search_returns_index",
-  "test_binary_search.py::test_binary_search_no_found"
-]
