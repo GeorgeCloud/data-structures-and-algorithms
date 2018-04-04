@@ -1,0 +1,9 @@
+[
+  "test_stack.py::test_empty",
+  "test_stack.py::test_stack_pop",
+  "test_stack.py::test_stack_pop_error",
+  "test_stack.py::test_stack_size",
+  "test_stack.py::test_stack_push",
+  "test_stack.py::test_stack_size_increase",
+  "test_stack.py::test_peek"
+]

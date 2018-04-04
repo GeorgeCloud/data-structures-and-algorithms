@@ -1,0 +1,5 @@
+[
+  "test_shift_array.py::test_insertShiftArray_type",
+  "test_shift_array.py::test_insertShiftArray_length",
+  "test_shift_array.py::test_insertShiftArray_value_inserted"
+]
