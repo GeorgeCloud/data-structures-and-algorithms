@@ -42,22 +42,38 @@ class LinkedList(object):
             self.insert(newVal)
             self._len += 1
         return self._len
+    # def insert_before(self, value, newVal):
+    #     """inserts a node before a specified node value"""
+    #     new_node = Node(newVal)
+    #     if value == self.head.val:
+    #         self.head = Node(newVal, self.head)
+    #     current = self.head
+    #     while current._next is not None:
+    #         if current._next.val == value:
+    #             new_node._next = current._next
+    #             current._next = new_node
+    #             self._len += 1
+    #             return self._len
+    #         current = current._next
+    #     if current.val is None:
+    #         raise ValueError("Data not in list")
 
-    def insert_before(self, value, newVal):
-        """inserts a node before a specified node value"""
-        new_node = Node(newVal)
-        if value == self.head.val:
-            self.head = Node(newVal, self.head)
+    def insert_before(self, val, newVal):
+        """Add a new node with the given newValue immediately before the first value node"""
         current = self.head
-        while current._next is not None:
-            if current._next.val == value:
-                new_node._next = current._next
-                current._next = new_node
-                self._len += 1
-                return self._len
+        previous = None
+        while current:
+            if current.val == val:
+                if previous is None:
+                    self.insert(newVal)
+                else:
+                    new_node = Node(newVal)
+                    new_node._next = current
+                    previous._next = new_node
+                    self._len += 1
+                break
+            previous = current
             current = current._next
-        if current.val is None:
-            raise ValueError("Data not in list")
 
     def insert_after(self, value, newVal):
         """inserts a node after a specified node value"""
