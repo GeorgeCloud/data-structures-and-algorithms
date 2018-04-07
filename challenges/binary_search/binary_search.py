@@ -1,10 +1,7 @@
-def binary_search(arr, val):
-    """
-    Returns val's index in arrayself.
-    arr is your array.
-    val is the index you want to find in your array.
-    """
-    first, last = 0, len(arr)-1
+def binarySearch(arr, val):
+    if len(arr) < 1:
+        return -1
+    first, last = 0, len(arr) -1
     while first <= last and first != last:
         if (first + last) % 2:
             middle = (first + last + 1) // 2
@@ -17,6 +14,5 @@ def binary_search(arr, val):
         else:
             first = middle
     return -1
-
 
 # print(binary_search([1, 2, 3, 4, 5, 6], 6))
