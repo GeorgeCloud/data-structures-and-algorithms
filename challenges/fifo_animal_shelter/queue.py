@@ -1,4 +1,11 @@
-from node import Node
+class Node:
+    def __init__(self, value, next=None):
+        self.val = value
+        self._next = next
+
+    def __repr__(self):
+        return "Node|{}".format(self.value)
+
 
 class Queue:
     def __init__(self, iter=()):
@@ -25,8 +32,6 @@ class Queue:
 
     def dequeue(self):
         """Pops front node of Queue and returns it"""
-        # if not self.head:
-        #     raise IndexError('')
         node = self.head
         if not node._next:
             self.head = None
@@ -37,7 +42,3 @@ class Queue:
         node._next, node = None, node._next
         self._size -= 1
         return node.val
-
-
-# q = queue([1, 2, 34])
-# q.dequeue()
