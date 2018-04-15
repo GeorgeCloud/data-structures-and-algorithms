@@ -21,7 +21,7 @@ not enqueue it to the second queue.
 
 
 ## Assets
-![pseudocode](assets/fifo_animal_shelter.jpg)
+![pseudocode](../../assets/fifo_animal_shelter.jpg)
 
 
 ## Architecture
