@@ -1,18 +1,11 @@
-from binary_search import binary_search
-
-arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
+from binary_search import binarySearch
+import pytest, time
 
 def test_binary_search_empty_list():
-    """Validates if array is empty"""
-    assert binary_search([], 5) == -1
-
+	assert binarySearch([], 2) == -1
 
 def test_binary_search_returns_index():
-    """Validates if value given returns the correct index of value in array."""
-    assert binary_search(arr, 7) == 6
-
+	assert binarySearch([1, 2, 3, 4, 5, 6], 4) == 3
 
 def test_binary_search_no_found():
-    """Returns -1 if the value was not found, uses a binary search"""
-    assert binary_search([], 2) == -1
+	assert binarySearch([1, 2, 3, 4, 5, 6], 40000) == -1

@@ -20,3 +20,4 @@ def test_insertShiftArray_value_inserted():
     """Checks if input is the valid value being compared to"""
     arr = shift_array.insertShiftArray(testArray, 'movie')
     assert arr[int(len(arr)/2)] == 'movie'
+
