@@ -7,5 +7,8 @@ by always chopping the middle of sorted numbers to find a desired value
 Find value inside an array by splitting the array in half and checking if the
 value is higher or lower
 
+
+
 ## Solution
 Check if the value is higher or lower than the middle of the array
+![pseudocode](../../assets/binary_search.jpg)
