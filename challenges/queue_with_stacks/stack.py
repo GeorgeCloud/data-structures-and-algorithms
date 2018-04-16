@@ -1,4 +1,8 @@
-from node import Node
+class Node:
+    def __init__(self, value, next=None):
+        self.val = value
+        self._next = next
+
 
 class Stack:
     def __init__(self, iter=()):
@@ -27,7 +31,6 @@ class Stack:
         self.head = self.head._next
         self._size -= 1
         return node.val
-
 
     def peek(self):
         """Returns head node"""
