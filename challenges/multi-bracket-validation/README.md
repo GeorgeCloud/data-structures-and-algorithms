@@ -19,7 +19,11 @@ Create a branch in your repository called multi-bracket-validation
 Create file called multi_bracket_validation.py
 
 
-## Architechture
+## Assets
+![pseudocode](../../assets/brackets.jpg)
+
+
+## Architecture
 Python 3.6.4
 
 
