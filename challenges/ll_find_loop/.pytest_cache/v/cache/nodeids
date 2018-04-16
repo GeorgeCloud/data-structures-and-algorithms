@@ -1,0 +1,7 @@
+[
+  "test_ll_find_loop.py::test_ll_find_loop_False",
+  "test_ll_find_loop.py::test_ll_find_loop_insert",
+  "test_ll_find_loop.py::test_ll_find_loop_true",
+  "test_ll_find_loop.py::test_ll_find_loop_2nd_node",
+  "test_ll_find_loop.py::test_ll_find_loop_true_3rd_node"
+]

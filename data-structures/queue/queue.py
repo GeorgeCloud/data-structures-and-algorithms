@@ -1,11 +1,4 @@
-class Node:
-    def __init__(self, value, next=None):
-        self.val = value
-        self._next = next
-
-    def __repr__(self):
-        return "Node|{}".format(self.value)
-
+from node import Node
 
 class Queue:
     def __init__(self, iter=()):
@@ -17,7 +10,7 @@ class Queue:
     def __str__(self):
         """Returns string with Queue informations(head, length)"""
         if self.head:
-            return 'Queues First value is {} and length is {}\
+            return 'Stacks First value is {} and length is {}\
             '.format(self.head.val, self._size)
         return 'Stack Empty'
 
@@ -32,6 +25,8 @@ class Queue:
 
     def dequeue(self):
         """Pops front node of Queue and returns it"""
+        if not self.head:
+            raise IndexError('')
         node = self.head
         if not node._next:
             self.head = None
@@ -42,3 +37,9 @@ class Queue:
         node._next, node = None, node._next
         self._size -= 1
         return node.val
+
+
+
+
+# line = Queue(['tom', 'brown', 'kenzo', 'kim'])
+# print(line.head)

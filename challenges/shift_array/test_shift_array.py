@@ -1,11 +1,23 @@
-from shift_array import *
+import shift_array
 
-def test_insertShiftArray_length(testArray, 'e'):
-    assert insertShiftArray(testArray, 'e') == len(testArray) + 1
+# Array of size 4
+testArray = ['phone', 'pop', 'tree', 'item']
 
-def test_insertShiftArray_value_inserted(testArray, 'e'):
-    assert insertShiftArray(testArray, 'e') == testArray.insert(len(testArray/2), e)
 
-def test_insertShiftArray_length_type(testArray, 'e'):
-    assert isinstance(insertShiftArray(testArray, 'e'), list)
-    
+def test_insertShiftArray_type():
+    """Checks if input is only array"""
+    arr = shift_array.insertShiftArray(2, 4)
+    assert arr is False
+
+
+def test_insertShiftArray_length():
+    """Checks for length aftering inserting value into array"""
+    arr = shift_array.insertShiftArray(testArray, 100)
+    assert len(arr) == 5
+
+
+def test_insertShiftArray_value_inserted():
+    """Checks if input is the valid value being compared to"""
+    arr = shift_array.insertShiftArray(testArray, 'movie')
+    assert arr[int(len(arr)/2)] == 'movie'
+
