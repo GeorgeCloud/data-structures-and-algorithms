@@ -1,21 +1,29 @@
-from .queue import Queue
+from k_tree import KTree
 
 
 def print_level_order(tree):
-    """
-    input  <--- Tree
-    output <--- Prints nodes level by level
-    """
-    if not tree.root:
-        return ''
-    first_queue = Queue([tree.root])
-    second_queue = Queue()
+    '''prints each level of k-tree on own line'''
+    if not isinstance(tree, KTree):
+        raise TypeError('argument must be of type <KTree>')
 
-    while first_queue or second_queue:
-        if not first_queue:
-            temp = first_queue
-            first_queue = second_queue
-            second_queue = temp
-        node = queue.dequeue()
+    all_strings = []  # For testing output
 
-        second_queue.enqueue(child)
+    def recurse(nodelist):
+        nonlocal all_strings
+        new_list = []
+        printlist = []
+        for node in nodelist:
+            printlist.append(str(node.val))
+            for child in node.children:
+                new_list.append(child)
+
+        string = ' '.join(printlist)
+        all_strings.append(string)
+
+        if len(new_list):
+            recurse(new_list)
+
+    if tree.root:
+        recurse([tree.root])
+
+    return '\n'.join(all_strings)
