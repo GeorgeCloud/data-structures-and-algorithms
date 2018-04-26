@@ -2,7 +2,10 @@ from k_tree import KTree
 
 
 def print_level_order(tree):
-    '''prints each level of k-tree on own line'''
+    """
+    input  <--- Tree
+    output <--- Prints nodes level by level
+    """
     if not isinstance(tree, KTree):
         raise TypeError('argument must be of type <KTree>')
 

@@ -42,22 +42,38 @@ class LinkedList(object):
             self.insert(newVal)
             self._len += 1
         return self._len
+    # def insert_before(self, value, newVal):
+    #     """inserts a node before a specified node value"""
+    #     new_node = Node(newVal)
+    #     if value == self.head.val:
+    #         self.head = Node(newVal, self.head)
+    #     current = self.head
+    #     while current._next is not None:
+    #         if current._next.val == value:
+    #             new_node._next = current._next
+    #             current._next = new_node
+    #             self._len += 1
+    #             return self._len
+    #         current = current._next
+    #     if current.val is None:
+    #         raise ValueError("Data not in list")
 
-    def insert_before(self, value, newVal):
-        """inserts a node before a specified node value"""
-        new_node = Node(newVal)
-        if value == self.head.val:
-            self.head = Node(newVal, self.head)
+    def insert_before(self, val, newVal):
+        """Add a new node with the given newValue immediately before the first value node"""
         current = self.head
-        while current._next is not None:
-            if current._next.val == value:
-                new_node._next = current._next
-                current._next = new_node
-                self._len += 1
-                return self._len
+        previous = None
+        while current:
+            if current.val == val:
+                if previous is None:
+                    self.insert(newVal)
+                else:
+                    new_node = Node(newVal)
+                    new_node._next = current
+                    previous._next = new_node
+                    self._len += 1
+                break
+            previous = current
             current = current._next
-        if current.val is None:
-            raise ValueError("Data not in list")
 
     def insert_after(self, value, newVal):
         """inserts a node after a specified node value"""
@@ -68,10 +84,22 @@ class LinkedList(object):
                 current._next = Node(newVal, current._next)
             current = current._next
 
+    def kthFromEnd(self, key):
+        iter = self._len - (key + 1)
+        if self._len == 0:
+            return 'LinkedList is empty.'
+        if 0 > key or key > self._len:
+            return False
+        current = self.head
+        while range(iter):
+            iter -= 1
+            current = current._next
+        return current.val
 
-if __name__ == "__main__":
-    try:
-        ll = LinkedList([1, 2, 3, 4])
-        print(ll.kthFromEnd(1))
-    except TypeError:
-        print("This Linked-List takes one array as a parameter")
+#
+# if __name__ == "__main__":
+#     try:
+#         ll = LinkedList([1, 2, 3, 4])
+#         print(ll.kthFromEnd(3))
+#     except TypeError:
+#         print("This Linked-List takes one array as a parameter")

@@ -1,8 +1,29 @@
-Linked-List | March 25, 2018
+LINKED LISTS ARE THE FOUNDATIONS OF DATA STORING TYPES
 
-This a generic Linked-List with simple methods to insert and find
-node elements within the Linked-List. This will be expanded to
-achieve other tasks such as find_index(), remove_by_index(), remove_by_value().
+This will contain updates on Link-List as functionality progresses
+
+March 25, 2018
+-
+.insert
+.__len__
+.__str__
+.append
 
 
-Linked-List are the base foundation of Array/Lists.
+
+March 27, 2018
+-
+Linked-List can now preform
+.find
+.insertBefore
+.insertAfter
+
+
+
+
+March 27, 2018
+-
+Added 1 method
+
+.kthFromEnd
+Returns Node given an index that starts from end of the LinkedList
