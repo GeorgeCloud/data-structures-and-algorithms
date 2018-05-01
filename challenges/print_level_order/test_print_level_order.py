@@ -1,24 +1,41 @@
-from .k_tree import KTree
+from print_level_order import print_level_order
+from k_tree import KTree, Node
 import pytest
 
 
 @pytest.fixture
-def one_element_tree():
-    return KTree(1)
+def small_k_tree():
+    """small tree creation."""
+    tree = KTree('string1')
+    tree.root.children = [Node(i) for i in ['string2', 'string3', 'string4']]
+    return tree
 
 
 @pytest.fixture
-def numerous_childs():
-    k_tree = KTree(1)
-    k_tree.insert(2, 1)
-    k_tree.insert(3, 2)
-    k_tree.insert(4, 3)
-    return k_tree
+def mid_k_tree():
+    tree = KTree('string1')
+    tree.root.children = [Node(i) for i in ['string2', 'string3', 'string4']]
+    tree.root.children["string1"].children = [Node(21), Node(22)]
+    tree.root.children[1].children = [Node(3)]
+    tree.root.children[2].children = [Node(i) for i in ['a1, b1, c1, d1']]
+    tree.root.children[2].children[3].children = [Node('2'), Node('1')]
+    return tree
 
 
-def test_empty_k_tree(new_k_tree):
-    pass
+def test_invalid_argument():
+    """Testing with invalid args."""
+    with pytest.raises(TypeError):
+        assert print_level_order('sdffs')
 
 
-def test_level_order_no_childs(numerous_childs):
-    pass
+def test_small_tree(small_k_tree):
+    '''Testing regular tree for join.'''
+    expected = ["string1", "string2 string3 string4"]
+    assert '\n'.join(expected) == print_level_order(small_k_tree)
+
+
+# def test_mid_tree(mid_k_tree):
+#     '''Validating tree is printing same vals.'''
+#     arr = ["string1", "string2 string3 string4"]
+#     assert print_level_order(mid_k_tree) == '\n'.join(arr)
+
