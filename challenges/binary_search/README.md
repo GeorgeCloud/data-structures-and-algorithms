@@ -11,6 +11,9 @@ ordered numbers.
 Checking if the search value is higher or lower.
 
 
+## Architechture
+Python 3.6.4
+
 ## Solution
 Check if the value is higher or lower than the middle of the array. If higher
 then you dump every number from the left by splitting it in half and continue
@@ -19,14 +22,6 @@ the process.
 
 ## Assets
 ![pseudocode](../../assets/binary_search.jpg)
-
-
-## Architechture
-Python 3.6.4
-
-
-## API
-None
 
 
 ## Change log

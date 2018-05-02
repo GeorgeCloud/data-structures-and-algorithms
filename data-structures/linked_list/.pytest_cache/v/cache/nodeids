@@ -1,0 +1,9 @@
+[
+  "test_linked_list.py::test_linked_list_creation",
+  "test_linked_list.py::test_insert_into_linkedlist",
+  "test_linked_list.py::test_find_value",
+  "test_linked_list.py::test_current_node_value",
+  "test_linked_list.py::test_append",
+  "test_linked_list.py::test_insert_before",
+  "test_linked_list.py::test_insert_after"
+]
