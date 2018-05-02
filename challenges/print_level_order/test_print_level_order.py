@@ -32,9 +32,3 @@ def test_small_tree(small_k_tree):
     '''Testing regular tree for join.'''
     expected = ["string1", "string2 string3 string4"]
     assert '\n'.join(expected) == print_level_order(small_k_tree)
-
-
-# def test_mid_tree(mid_k_tree):
-#     '''Validating tree is printing same vals.'''
-#     arr = ["string1", "string2 string3 string4"]
-#     assert print_level_order(mid_k_tree) == '\n'.join(arr)
