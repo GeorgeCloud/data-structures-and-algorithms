@@ -11,3 +11,5 @@ the work of having to filter the array into only unique values. Now you should
 traverse the second tree and check if that value of the current node is inside
 that first set and if so add it the a results array and return it after looping
 the second tree.
+
+![alt text](join_trees.jpg)
