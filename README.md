@@ -1,4 +1,4 @@
-401 Python | Seattle, WA
+Code 401: Advanced Software Development in Python | Seattle, WA
 
 # Table of Contents
 1. Data Structures
