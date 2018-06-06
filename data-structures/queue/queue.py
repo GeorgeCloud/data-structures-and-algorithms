@@ -1,45 +1,37 @@
-from node import Node
+class Node:
+    """Simple node structure."""
+    def __init__(self, value, next=None):
+        self.val = value
+        self._next = next
+
 
 class Queue:
+    """Queue Data-structures. Used for minimal space.(Improved Queue)"""
     def __init__(self, iter=()):
         self.head = None
-        self._size = 0
-        for el in iter:
-            self.enqueue(el)
+        self.back = None
+        self._len = 0
+        
+        for element in iter:
+            self.enqueue(element)
+            self._len += 1
 
-    def __str__(self):
-        """Returns string with Queue informations(head, length)"""
-        if self.head:
-            return 'Stacks First value is {} and length is {}\
-            '.format(self.head.val, self._size)
-        return 'Stack Empty'
+def enqueue(self, value):
+    """APPENDS element to the back of queue."""
+    element = Node(value)
+    
+    if self.head:
+        self.back._next = element
+            self.back = self.back._next
+        else:
+            self.head = element
+            self.back = element
 
-    def __len__(self):
-        """Returns size of Queue Instance"""
-        return self._size
+def dequeue(self):
+    """REMOVES & RETURNS element from the front of the queue object"""
+    element = self.head
+    self.head = self.head._next
+    self._len -= 1
+    
+    return element
 
-    def enqueue(self, val):
-        """Appends to the end of the line"""
-        self.head = Node(val, self.head)
-        self._size += 1
-
-    def dequeue(self):
-        """Pops front node of Queue and returns it"""
-        if not self.head:
-            raise IndexError('')
-        node = self.head
-        if not node._next:
-            self.head = None
-            self._size -= 1
-            return node.val
-        while node._next._next:
-            node = node._next
-        node._next, node = None, node._next
-        self._size -= 1
-        return node.val
-
-
-
-
-# line = Queue(['tom', 'brown', 'kenzo', 'kim'])
-# print(line.head)
